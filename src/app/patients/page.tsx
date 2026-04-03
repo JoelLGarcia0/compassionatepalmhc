@@ -23,7 +23,7 @@ const faqs: FAQ[] = [
   {
     question: "How do I schedule an appointment?",
     answer:
-      "You can call us at (555) 123-4567, visit any of our locations in person, or fill out the contact form on our website. Walk-ins are also welcome, though appointments are recommended.",
+      "You can call us at (305) 733-1669, visit our location in person, or fill out the contact form on our website. Walk-ins are also welcome, though appointments are recommended.",
   },
   {
     question: "What should I bring to my first visit?",
@@ -38,7 +38,7 @@ const faqs: FAQ[] = [
   {
     question: "What languages do you offer services in?",
     answer:
-      "We provide services in English, Spanish, and Creole. We also have access to interpreter services for additional languages to ensure every patient can communicate comfortably.",
+      "We provide services in English, Spanish, French, and Creole to ensure every patient can communicate comfortably.",
   },
   {
     question: "Can I get same-day care for urgent needs?",
@@ -183,7 +183,7 @@ export default function PatientsPage() {
             {[
               {
                 title: "Call Us",
-                desc: "Call (555) 123-4567 during business hours. Our friendly scheduling team will help you find a convenient time.",
+                desc: "Call (305) 733-1669 during business hours. Our friendly scheduling team will help you find a convenient time.",
                 icon: (
                   <svg
                     className="h-7 w-7"

@@ -36,7 +36,8 @@ const referralSteps = [
     number: "1",
     title: "Submit a Referral",
     description:
-      "Send us a referral via fax at (555) 123-4568 or through our secure electronic referral system.",
+      /* TODO: Confirm fax number and referral process with client */
+      "Contact us to submit a referral. Reach out by phone at (305) 733-1669 or email at Contact@compassionatepalmhealthcare.com.",
   },
   {
     number: "2",
@@ -163,23 +164,18 @@ export default function ProvidersPage() {
                 </h2>
                 <div className="mt-8 space-y-6 text-charcoal">
                   <div>
+                    {/* TODO: Confirm fax number and dedicated provider relations line with client */}
                     <p className="font-semibold text-black text-sm tracking-wide">
-                      Fax Referrals To:
+                      Phone:
                     </p>
-                    <p className="text-sm mt-1">(555) 123-4568</p>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-black text-sm tracking-wide">
-                      Provider Relations Line:
-                    </p>
-                    <p className="text-sm mt-1">(555) 123-4569</p>
+                    <p className="text-sm mt-1">(305) 733-1669</p>
                   </div>
                   <div>
                     <p className="font-semibold text-black text-sm tracking-wide">
                       Email:
                     </p>
                     <p className="text-sm mt-1">
-                      referrals@compassionatepalm.org
+                      Contact@compassionatepalmhealthcare.com
                     </p>
                   </div>
                   <div>

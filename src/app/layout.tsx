@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Compassionate Palm Health Care | Compassionate Care, Stronger Community",
   description:
-    "Compassionate Palm Health Care provides quality, affordable healthcare services to our community. Primary care, behavioral health, dental, and more.",
+    "Compassionate Palm Health Care (CPHC) is an integrated, community-centered healthcare organization in Miami providing PrEP services, mental health support, addiction treatment, and weight loss programs to underserved communities.",
   icons: {
     icon: "/favicon1.png",
   },

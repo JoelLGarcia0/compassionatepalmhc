@@ -4,7 +4,7 @@ import WaveSeparator from "@/components/WaveSeperator";
 export const metadata: Metadata = {
   title: "About Us | Compassionate Palm Health Care",
   description:
-    "Learn about our mission, values, and the dedicated team behind Compassionate Palm Health Care.",
+    "Learn about the mission and values behind Compassionate Palm Health Care — an integrated, community-centered healthcare organization serving underserved populations in Miami.",
 };
 
 interface Value {
@@ -13,12 +13,7 @@ interface Value {
   icon: React.ReactNode;
 }
 
-interface Leader {
-  name: string;
-  role: string;
-  bio: string;
-}
-
+/* TODO: Replace placeholder core values with final approved values from client */
 const values: Value[] = [
   {
     title: "Compassion",
@@ -102,39 +97,6 @@ const values: Value[] = [
   },
 ];
 
-const leaders: Leader[] = [
-  {
-    name: "Dr. Elena Martinez",
-    role: "Chief Executive Officer",
-    bio: "Dr. Martinez brings over 20 years of healthcare leadership experience, with a passion for expanding access to underserved populations.",
-  },
-  {
-    name: "Dr. Robert Chen",
-    role: "Chief Medical Officer",
-    bio: "Board-certified family physician with extensive experience in community health centers and a champion for integrated care models.",
-  },
-  {
-    name: "Sarah Williams, LCSW",
-    role: "Director of Behavioral Health",
-    bio: "Licensed clinical social worker dedicated to removing stigma around mental health and building comprehensive support systems.",
-  },
-  {
-    name: "Michael Thompson",
-    role: "Chief Operations Officer",
-    bio: "Operations expert with 15 years of experience in nonprofit healthcare management and community health center expansion.",
-  },
-  {
-    name: "Dr. Aisha Patel",
-    role: "Dental Director",
-    bio: "Leading our dental program with a focus on preventive care and oral health education for children and families.",
-  },
-  {
-    name: "James Rivera",
-    role: "Director of Development",
-    bio: "Passionate fundraiser and community advocate who has helped raise millions in support of healthcare access initiatives.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -150,9 +112,12 @@ export default function AboutPage() {
               Dedicated to Our Community&apos;s Health
             </h1>
             <p className="mt-7 text-lg leading-relaxed text-charcoal">
-              Compassionate Palm Health Care was founded on a simple belief:
-              everyone deserves access to quality healthcare. For over 15 years,
-              we have served as a cornerstone of health in our community.
+              Compassionate Palm Health Care (CPHC) is an integrated,
+              community-centered healthcare organization focused on improving
+              access, quality, and continuity of care. We serve underserved and
+              marginalized populations, including veterans, individuals
+              experiencing homelessness, and economically disadvantaged
+              communities.
             </p>
           </div>
         </div>
@@ -167,14 +132,18 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="mt-7 text-lg leading-relaxed text-charcoal">
-                To provide comprehensive, high-quality healthcare services that
-                are accessible, affordable, and delivered with compassion to all
-                members of our community — regardless of their ability to pay.
+                To improve the health and well-being of underserved communities
+                by providing compassionate, integrated, and accessible care that
+                addresses the physical, emotional, and social needs of every
+                individual.
               </p>
+              {/* TODO: Replace with full About Us story once provided by client */}
               <p className="mt-5 text-lg leading-relaxed text-charcoal">
-                As a Federally Qualified Health Center, we are committed to
-                eliminating health disparities and improving the well-being of
-                every patient who walks through our doors.
+                At CPHC, we believe that quality healthcare should be available
+                to everyone regardless of background or circumstance. Our
+                integrated approach combines medical services, mental health
+                support, and preventive care to deliver comprehensive solutions
+                that uplift our community and foster lasting well-being.
               </p>
               <p className="mt-8 text-base font-accent italic text-accent">
                 We believe that healthcare is a right, and we work tirelessly to
@@ -183,6 +152,7 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-full">
+                {/* TODO: Replace with real office/team photo from client */}
                 <div className="relative flex h-72 w-full items-center justify-center rounded-2xl bg-gray-200 text-gray-400 text-sm font-medium">
                   Mission Photo
                 </div>
@@ -193,6 +163,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
+      {/* TODO: Replace placeholder core values with final approved values from client */}
       <section className="relative bg-cream/60 pt-14 pb-16 lg:pt-16 lg:pb-20">
         <WaveSeparator position="top" colorClassName="text-cream/60" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -227,36 +198,26 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
+      {/* TODO: Replace placeholder leadership team with real provider bios, names, credentials, headshots, languages, and specialties from client */}
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
-              Our Leadership Team
+              Our Team
             </h2>
             <p className="mt-5 text-lg text-charcoal">
               Meet the dedicated professionals leading our mission forward.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {leaders.map((leader) => (
-              <div
-                key={leader.name}
-                className="rounded-xl border border-sand bg-white p-8 card-hover testimonial-bar"
-              >
-                <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary/10 to-accent/10 text-gray-400 text-xs font-medium">
-                  Headshot
-                </div>
-                <h3 className="text-lg font-semibold text-black tracking-wide">
-                  {leader.name}
-                </h3>
-                <p className="text-sm font-accent italic text-accent mt-1">
-                  {leader.role}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-charcoal">
-                  {leader.bio}
-                </p>
-              </div>
-            ))}
+          <div className="rounded-xl border border-sand bg-cream/40 p-12 text-center">
+            <p className="text-charcoal text-lg">
+              Our team of experienced healthcare professionals is dedicated to
+              providing compassionate, high-quality care to every patient.
+            </p>
+            <p className="text-charcoal/60 text-sm mt-4 italic">
+              {/* TODO: Provider bios, names, credentials, headshots, languages, and specialties still needed */}
+              Team member profiles coming soon.
+            </p>
           </div>
         </div>
       </section>

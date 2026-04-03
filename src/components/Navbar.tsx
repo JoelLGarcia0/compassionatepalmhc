@@ -65,19 +65,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTAs */}
+          {/* Desktop CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
+            {/* TODO: Final CTA wording from client */}
             <Link
-              href="/donate"
-              className="rounded-full border border-primary px-5 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white font-display tracking-wide"
-            >
-              Donate
-            </Link>
-            <Link
-              href="/patients"
+              href="/contact"
               className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark font-display tracking-wide"
             >
-              Get Care
+              Contact Us
             </Link>
           </div>
 
@@ -135,19 +130,13 @@ export default function Navbar() {
               ))}
               <hr className="hairline" />
               <div className="flex flex-col gap-3 pt-2">
+                {/* TODO: Final CTA wording from client */}
                 <Link
-                  href="/donate"
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-full border border-primary px-5 py-2.5 text-center text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
-                >
-                  Donate
-                </Link>
-                <Link
-                  href="/patients"
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
                 >
-                  Get Care
+                  Contact Us
                 </Link>
               </div>
             </div>

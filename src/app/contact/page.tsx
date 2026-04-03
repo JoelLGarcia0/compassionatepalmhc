@@ -169,7 +169,7 @@ export default function ContactPage() {
                       value={form.phone}
                       onChange={handleChange}
                       className="w-full rounded-lg border border-sand px-4 py-3 text-sm text-dark outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
-                      placeholder="(555) 000-0000"
+                      placeholder="(305) 000-0000"
                     />
                   </div>
                 </div>
@@ -190,7 +190,6 @@ export default function ContactPage() {
                     <option value="services">Question About Services</option>
                     <option value="billing">Billing & Insurance</option>
                     <option value="referral">Provider Referral</option>
-                    <option value="donation">Donations & Giving</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
@@ -235,7 +234,7 @@ export default function ContactPage() {
                       </svg>
                       <div>
                         <p className="text-sm font-semibold text-black tracking-wide">Phone</p>
-                        <p className="text-sm text-charcoal mt-0.5">(555) 123-4567</p>
+                        <p className="text-sm text-charcoal mt-0.5">(305) 733-1669</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -244,7 +243,7 @@ export default function ContactPage() {
                       </svg>
                       <div>
                         <p className="text-sm font-semibold text-black tracking-wide">Email</p>
-                        <p className="text-sm text-charcoal mt-0.5">info@compassionatepalm.org</p>
+                        <p className="text-sm text-charcoal mt-0.5">Contact@compassionatepalmhealthcare.com</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -255,8 +254,8 @@ export default function ContactPage() {
                       <div>
                         <p className="text-sm font-semibold text-black tracking-wide">Address</p>
                         <p className="text-sm text-charcoal mt-0.5">
-                          1234 Palm Avenue, Suite 100<br />
-                          West Palm Beach, FL 33401
+                          1380 NE Miami Gardens Dr, Suite 275<br />
+                          Miami, FL 33179
                         </p>
                       </div>
                     </div>
@@ -267,9 +266,19 @@ export default function ContactPage() {
                       <div>
                         <p className="text-sm font-semibold text-black tracking-wide">Hours</p>
                         <p className="text-sm text-charcoal mt-0.5">
-                          Mon–Fri: 8:00 AM – 6:00 PM<br />
-                          Sat: 9:00 AM – 1:00 PM<br />
-                          Sun: Closed
+                          Monday – Friday: 9:00 AM – 5:00 PM<br />
+                          Saturday – Sunday: Closed
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="h-5 w-5 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                      </svg>
+                      <div>
+                        <p className="text-sm font-semibold text-black tracking-wide">Languages</p>
+                        <p className="text-sm text-charcoal mt-0.5">
+                          We speak English, Spanish, French, and Creole.
                         </p>
                       </div>
                     </div>
@@ -277,6 +286,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Map Placeholder */}
+                {/* TODO: Replace with embedded Google Map for 1380 NE Miami Gardens Dr, Suite 275, Miami, FL 33179 */}
                 <div className="flex h-64 w-full items-center justify-center rounded-xl border border-sand bg-gray-200 text-gray-400 text-sm font-medium">
                   Map Placeholder
                 </div>

@@ -23,9 +23,9 @@ interface Testimonial {
 /* ─── Data ─── */
 const services: ServiceCard[] = [
   {
-    title: "Primary Care",
+    title: "PrEP Services",
     description:
-      "Comprehensive medical care for adults and children, including preventive exams, chronic disease management, and acute care visits.",
+      "Preventive care and treatment focused on reducing the risk of HIV transmission.",
     icon: (
       <svg
         className="h-7 w-7"
@@ -37,15 +37,15 @@ const services: ServiceCard[] = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+          d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
         />
       </svg>
     ),
   },
   {
-    title: "Behavioral Health",
+    title: "Mental Health",
     description:
-      "Mental health counseling, substance use support, and psychiatric services integrated with your primary care team.",
+      "Support for emotional and psychological well-being through compassionate, patient-centered care.",
     icon: (
       <svg
         className="h-7 w-7"
@@ -63,9 +63,9 @@ const services: ServiceCard[] = [
     ),
   },
   {
-    title: "Dental Care",
+    title: "Alcohol & Drug Addiction",
     description:
-      "Preventive and restorative dental services for the whole family, including cleanings, fillings, and oral health education.",
+      "Treatment and recovery support for individuals facing substance use challenges.",
     icon: (
       <svg
         className="h-7 w-7"
@@ -77,15 +77,15 @@ const services: ServiceCard[] = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"
+          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
         />
       </svg>
     ),
   },
   {
-    title: "Pharmacy Services",
+    title: "Weight Loss",
     description:
-      "On-site pharmacy with affordable medications, prescription assistance programs, and medication counseling.",
+      "Personalized programs designed to support healthy and sustainable weight management.",
     icon: (
       <svg
         className="h-7 w-7"
@@ -97,13 +97,14 @@ const services: ServiceCard[] = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+          d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"
         />
       </svg>
     ),
   },
 ];
 
+/* TODO: Replace with real impact statistics once provided by client */
 const stats: Stat[] = [
   { value: "25,000+", label: "Patients Served Annually" },
   { value: "15+", label: "Years of Service" },
@@ -111,6 +112,7 @@ const stats: Stat[] = [
   { value: "50+", label: "Healthcare Professionals" },
 ];
 
+/* TODO: Replace with real patient testimonials once provided by client */
 const testimonials: Testimonial[] = [
   {
     quote:
@@ -137,13 +139,13 @@ const steps = [
     number: "1",
     title: "Call or Walk In",
     description:
-      "Contact us by phone at (555) 123-4567 or visit any of our locations. No referral needed.",
+      "Contact us by phone at (305) 733-1669 or visit our location. No referral needed.",
   },
   {
     number: "2",
     title: "Complete Your Intake",
     description:
-      "Our team will help you with paperwork, insurance verification, and sliding-fee eligibility.",
+      "Our team will help you with paperwork, insurance verification, and eligibility.",
   },
   {
     number: "3",
@@ -185,22 +187,26 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-7 max-w-lg text-lg leading-relaxed text-charcoal">
-                We provide affordable, high-quality medical, dental, and
-                behavioral health services to our community — regardless of your
-                ability to pay.
+                Compassionate Palm Health Care (CPHC) is an integrated,
+                community-centered healthcare organization focused on improving
+                access, quality, and continuity of care. We serve underserved and
+                marginalized populations, including veterans, individuals
+                experiencing homelessness, and economically disadvantaged
+                communities.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
-                  href="/patients"
+                  href="/contact"
                   className="rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
                 >
-                  Get Care
+                  {/* TODO: Final CTA wording from client */}
+                  Contact Us
                 </Link>
                 <Link
-                  href="/donate"
+                  href="/services"
                   className="rounded-full border border-primary px-8 py-3.5 text-base font-semibold text-primary transition-all hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/25"
                 >
-                  Support Our Mission
+                  Our Services
                 </Link>
               </div>
             </div>
@@ -231,8 +237,8 @@ export default function Home() {
               What We Do
             </h2>
             <p className="mt-5 text-lg text-charcoal">
-              Comprehensive, integrated healthcare services designed to meet the
-              needs of our entire community.
+              Integrated healthcare services designed to meet the needs of our
+              entire community.
             </p>
           </div>
           <div className="grid gap-px bg-sand/60 sm:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-sand/60">
@@ -285,15 +291,16 @@ export default function Home() {
               Who We Serve
             </h2>
             <p className="mt-5 text-lg text-charcoal">
-              Our doors are open to everyone. We proudly serve patients, partner
-              with providers, and strengthen our community.
+              Our doors are open to everyone. We proudly serve veterans,
+              individuals experiencing homelessness, economically disadvantaged
+              communities, and all who seek compassionate care.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
                 title: "Patients",
-                desc: "Whether you're insured, uninsured, or underinsured, we're here for you. We offer a sliding-fee scale to make care affordable.",
+                desc: "Whether you are insured, uninsured, or underinsured, we are here for you. We work to make care accessible and affordable for all.",
                 cta: "Become a Patient",
                 href: "/patients",
               },
@@ -305,9 +312,9 @@ export default function Home() {
               },
               {
                 title: "Community",
-                desc: "We invest in community health through outreach programs, health education, and wellness events throughout the year.",
+                desc: "We invest in community health through outreach programs, health education, and wellness initiatives throughout the year.",
                 cta: "Get Involved",
-                href: "/donate",
+                href: "/contact",
               },
             ].map((item) => (
               <div
@@ -381,116 +388,112 @@ export default function Home() {
           </div>
           <div className="mt-14 text-center mb-14">
             <Link
-              href="/patients"
+              href="/contact"
               className="rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
             >
-              Schedule an Appointment
+              {/* TODO: Final CTA wording from client */}
+              Contact Us
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Locations & Hours ── */}
+      {/* ── Location & Hours ── */}
 
       <section className="relative bg-primary-dark text-white pt-20 pb-16 lg:pt-16 lg:pb-20">
         <WaveSeparator position="top" colorClassName="text-primary-dark" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl font-bold sm:text-4xl tracking-wide font-accent">
-              Locations &amp; Hours
+              Location &amp; Hours
             </h2>
             <p className="mt-5 text-lg text-white/70 font-accent italic">
-              Convenient locations to serve you and your family.
+              Conveniently located to serve you and your family.
             </p>
           </div>
-          <div className="grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-3 rounded-xl overflow-hidden">
-            {[
-              {
-                name: "Main Campus",
-                address:
-                  "1234 Palm Avenue, Suite 100\nWest Palm Beach, FL 33401",
-                hours: "Mon–Fri: 8:00 AM – 6:00 PM\nSat: 9:00 AM – 1:00 PM",
-                phone: "(555) 123-4567",
-              },
-              {
-                name: "Northside Clinic",
-                address: "5678 Community Drive\nRiviera Beach, FL 33404",
-                hours: "Mon–Fri: 8:30 AM – 5:00 PM",
-                phone: "(555) 234-5678",
-              },
-              {
-                name: "Southside Family Center",
-                address: "9012 Wellness Way\nLake Worth, FL 33460",
-                hours: "Mon–Fri: 9:00 AM – 5:30 PM\nSat: 9:00 AM – 12:00 PM",
-                phone: "(555) 345-6789",
-              },
-            ].map((loc) => (
-              <div key={loc.name} className="bg-primary-dark p-10">
-                <h3 className="text-lg font-semibold mb-5 tracking-wide">
-                  {loc.name}
-                </h3>
-                <div className="space-y-4 text-sm text-white/70">
-                  <p className="flex items-start gap-3">
-                    <svg
-                      className="h-4 w-4 mt-0.5 shrink-0 text-accent"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z"
-                      />
-                    </svg>
-                    <span className="whitespace-pre-line">{loc.address}</span>
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <svg
-                      className="h-4 w-4 mt-0.5 shrink-0 text-accent"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span className="whitespace-pre-line">{loc.hours}</span>
-                  </p>
-                  <p className="flex items-center gap-3">
-                    <svg
-                      className="h-4 w-4 shrink-0 text-accent"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                      />
-                    </svg>
-                    {loc.phone}
-                  </p>
-                </div>
+          <div className="max-w-lg mx-auto">
+            <div className="bg-primary-dark p-10 rounded-xl border border-white/10">
+              <h3 className="text-lg font-semibold mb-5 tracking-wide">
+                Compassionate Palm Health Care
+              </h3>
+              <div className="space-y-4 text-sm text-white/70">
+                <p className="flex items-start gap-3">
+                  <svg
+                    className="h-4 w-4 mt-0.5 shrink-0 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z"
+                    />
+                  </svg>
+                  <span>1380 NE Miami Gardens Dr, Suite 275{"\n"}Miami, FL 33179</span>
+                </p>
+                <p className="flex items-start gap-3">
+                  <svg
+                    className="h-4 w-4 mt-0.5 shrink-0 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>Monday – Friday: 9:00 AM – 5:00 PM</span>
+                </p>
+                <p className="flex items-center gap-3">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                    />
+                  </svg>
+                  (305) 733-1669
+                </p>
+                <p className="flex items-center gap-3">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"
+                    />
+                  </svg>
+                  We speak English, Spanish, French, and Creole.
+                </p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Impact Stats ── */}
+      {/* TODO: Replace placeholder statistics with real data from client */}
       <section className="relative py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cream/40 via-white to-accent/5" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
@@ -499,8 +502,7 @@ export default function Home() {
               Our Impact
             </h2>
             <p className="mt-5 text-lg text-charcoal">
-              For over a decade, we&apos;ve been making a difference in the
-              lives of our neighbors.
+              Making a difference in the lives of our neighbors every day.
             </p>
           </div>
           <div className="grid gap-px bg-sand/60 sm:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-sand/60">
@@ -524,6 +526,7 @@ export default function Home() {
       <hr className="hairline mx-auto max-w-7xl" />
 
       {/* ── Testimonials ── */}
+      {/* TODO: Replace placeholder testimonials with real patient testimonials from client */}
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -560,6 +563,7 @@ export default function Home() {
       </section>
 
       {/* ── Partners ── */}
+      {/* TODO: Replace placeholder partner names with real community partners from client */}
       <section className="py-14 lg:py-18 bg-cream/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/60 mb-12">
@@ -596,18 +600,19 @@ export default function Home() {
             Everyone deserves access to quality healthcare. Let us help you and
             your family.
           </p>
+          {/* TODO: Final CTA wording from client */}
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
-              href="/patients"
+              href="/contact"
               className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-primary transition-all hover:bg-cream hover:shadow-lg hover:shadow-black/10"
             >
-              Get Care Today
+              Contact Us
             </Link>
             <Link
-              href="/contact"
+              href="/services"
               className="rounded-full border border-white/40 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
             >
-              Contact Us
+              View Our Services
             </Link>
           </div>
         </div>

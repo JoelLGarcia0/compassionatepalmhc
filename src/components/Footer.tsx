@@ -10,10 +10,10 @@ const linkGroups: FooterLinkGroup[] = [
   {
     title: "Services",
     links: [
-      { href: "/services", label: "Primary Care" },
-      { href: "/services", label: "Behavioral Health" },
-      { href: "/services", label: "Dental Care" },
-      { href: "/services", label: "Pharmacy" },
+      { href: "/services", label: "PrEP Services" },
+      { href: "/services", label: "Mental Health" },
+      { href: "/services", label: "Alcohol & Drug Addiction" },
+      { href: "/services", label: "Weight Loss" },
     ],
   },
   {
@@ -22,7 +22,7 @@ const linkGroups: FooterLinkGroup[] = [
       { href: "/about", label: "About Us" },
       { href: "/patients", label: "Become a Patient" },
       { href: "/providers", label: "For Providers" },
-      { href: "/donate", label: "Donate" },
+      { href: "/contact", label: "Contact Us" },
     ],
   },
   {
@@ -36,6 +36,7 @@ const linkGroups: FooterLinkGroup[] = [
   },
 ];
 
+/* TODO: Replace social media href="#" with real social media links from client */
 function SocialIcon({
   label,
   children,
@@ -75,8 +76,8 @@ export default function Footer() {
             </div>
 
             <p className="mt-6 text-white/70 text-sm leading-relaxed max-w-md mx-auto lg:mx-0 font-accent italic">
-              Compassionate care for our community. Everyone deserves access to
-              quality healthcare, regardless of their ability to pay.
+              Compassionate, integrated, and accessible care for our community.
+              Improving the health and well-being of underserved populations.
             </p>
 
             {/* Contact info */}
@@ -95,7 +96,7 @@ export default function Footer() {
                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                   />
                 </svg>
-                (555) 123-4567
+                (305) 733-1669
               </p>
 
               <p className="flex items-center gap-2 justify-center lg:justify-start">
@@ -112,7 +113,7 @@ export default function Footer() {
                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   />
                 </svg>
-                info@compassionatepalm.org
+                Contact@compassionatepalmhealthcare.com
               </p>
 
               <p className="flex items-start gap-2 justify-center lg:justify-start text-left">
@@ -135,9 +136,9 @@ export default function Footer() {
                   />
                 </svg>
                 <span>
-                  1234 Palm Avenue, Suite 100
+                  1380 NE Miami Gardens Dr, Suite 275
                   <br />
-                  West Palm Beach, FL 33401
+                  Miami, FL 33179
                 </span>
               </p>
             </div>
@@ -173,6 +174,7 @@ export default function Footer() {
               All rights reserved.
             </p>
 
+            {/* TODO: Replace with real social media links from client */}
             <div className="flex items-center justify-center gap-2">
               <SocialIcon label="Facebook">
                 <svg
