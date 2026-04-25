@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import WaveSeparator from "@/components/WaveSeperator";
 
 export const metadata: Metadata = {
@@ -152,9 +153,13 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-full">
-                {/* TODO: Replace with real office/team photo from client */}
-                <div className="relative flex h-72 w-full items-center justify-center rounded-2xl bg-gray-200 text-gray-400 text-sm font-medium">
-                  Mission Photo
+                <div className="relative h-72 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src="/mission.png"
+                    alt="Our mission at Compassionate Palm Health Care"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -198,7 +203,6 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      {/* TODO: Replace placeholder leadership team with real provider bios, names, credentials, headshots, languages, and specialties from client */}
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -209,15 +213,37 @@ export default function AboutPage() {
               Meet the dedicated professionals leading our mission forward.
             </p>
           </div>
-          <div className="rounded-xl border border-sand bg-cream/40 p-12 text-center">
-            <p className="text-charcoal text-lg">
-              Our team of experienced healthcare professionals is dedicated to
-              providing compassionate, high-quality care to every patient.
-            </p>
-            <p className="text-charcoal/60 text-sm mt-4 italic">
-              {/* TODO: Provider bios, names, credentials, headshots, languages, and specialties still needed */}
-              Team member profiles coming soon.
-            </p>
+          <div className="max-w-3xl mx-auto">
+            <div className="rounded-xl border border-sand bg-white p-8 sm:p-10 flex flex-col sm:flex-row gap-8 items-center sm:items-start card-hover">
+              <div className="relative h-40 w-40 sm:h-48 sm:w-48 shrink-0 overflow-hidden rounded-xl">
+                <Image
+                  src="/DR_Gelbrand.jpg"
+                  alt="Dr. Steven D. Gelbard, MD"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-center sm:text-left">
+                <h3 className="text-xl font-semibold text-black tracking-wide">
+                  Dr. Steven D. Gelbard, MD
+                </h3>
+                <p className="mt-1 text-sm font-accent italic text-primary">
+                  Medical Director — Neurosurgery & Pain Management
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-charcoal">
+                  Board-certified neurosurgeon with subspecialty expertise in pain management.
+                  Dr. Gelbard trained at NYU, Drexel University, Ohio State University, and
+                  Brown University, and earned his medical degree from Tufts University School
+                  of Medicine.
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-charcoal">
+                  His areas of focus include concussion care, hyperbaric oxygen therapy,
+                  thoracic spine surgery, and wound management. He is a published researcher
+                  in the Journal of Neurosurgery and a 2025 recipient of the Excellence in
+                  Concussion Care award.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

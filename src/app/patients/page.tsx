@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import WaveSeparator from "@/components/WaveSeperator";
 
@@ -158,8 +159,13 @@ export default function PatientsPage() {
             </div>
             <div className="flex items-center justify-center">
               <div className="relative w-full">
-                <div className="relative flex h-72 w-full items-center justify-center rounded-2xl bg-gray-200 text-gray-400 text-sm font-medium">
-                  Patient Photo
+                <div className="relative h-72 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src="/patient.png"
+                    alt="Patient receiving care at Compassionate Palm Health Care"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>

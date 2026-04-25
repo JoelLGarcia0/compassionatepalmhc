@@ -161,18 +161,23 @@ export default function Home() {
     <>
       {/* ── Hero ── */}
       <section className="relative bg-cream/60 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-primary/[0.03] rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-56 h-56 bg-accent/[0.04] rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid min-h-[600px] items-center gap-16 py-10 lg:grid-cols-2 lg:py-28">
-            <div>
+          <div className="grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 xl:gap-20 lg:py-24 xl:py-28 lg:min-h-[640px]">
+            <div className="text-center lg:text-left">
               <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-accent italic text-primary tracking-wide">
-                Compassionate care. Stronger community.
+                Quality care. Stronger community.
               </p>
-              <h1 className="text-4xl font-bold leading-tight text-black sm:text-5xl lg:text-6xl tracking-wide">
-                Quality Healthcare for{" "}
-                <span className="text-primary font-accent leading-1.5 tracking-normal relative">
-                  Everyone
+              <h1 className="text-3xl font-bold leading-[1.15] text-black sm:text-4xl lg:text-5xl tracking-wide">
+                Compassionate Care{" "}
+                <br className="hidden sm:block" />
+                for{" "}
+                <span className="text-primary font-accent tracking-normal relative inline-block whitespace-nowrap">
+                  Your Family
                   <svg
-                    className="absolute -bottom-2 left-0 w-full h-3 text-accent/40"
+                    className="absolute -bottom-1.5 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3 text-accent/40"
                     viewBox="0 0 200 12"
                     fill="none"
                     preserveAspectRatio="none"
@@ -186,42 +191,73 @@ export default function Home() {
                   </svg>
                 </span>
               </h1>
-              <p className="mt-7 max-w-lg text-lg leading-relaxed text-charcoal">
-                Compassionate Palm Health Care (CPHC) is an integrated,
-                community-centered healthcare organization focused on improving
-                access, quality, and continuity of care. We serve underserved and
-                marginalized populations, including veterans, individuals
-                experiencing homelessness, and economically disadvantaged
-                communities.
+              <p className="mt-6 max-w-lg mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed text-charcoal">
+                We provide accessible, community-centered healthcare focused on
+                quality, continuity, and compassion — serving families, seniors,
+                veterans, and underserved communities.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 sm:mt-10 flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
+                  className="rounded-full bg-primary px-7 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
                 >
-                  {/* TODO: Final CTA wording from client */}
                   Contact Us
                 </Link>
                 <Link
                   href="/services"
-                  className="rounded-full border border-primary px-8 py-3.5 text-base font-semibold text-primary transition-all hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/25"
+                  className="rounded-full border border-primary px-7 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-primary transition-all hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/25"
                 >
                   Our Services
                 </Link>
               </div>
+
+              {/* Trust row */}
+              <div className="mt-8 sm:mt-10 flex flex-wrap justify-center lg:justify-start items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-charcoal/70">
+                {[
+                  "Community-centered care",
+                  "No one turned away",
+                  "Families, seniors & veterans",
+                ].map((item, i) => (
+                  <span key={item} className="flex items-center gap-1.5">
+                    {i > 0 && <span className="hidden sm:inline text-sand mr-1">|</span>}
+                    <svg className="h-3.5 w-3.5 text-primary/60 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="flex items-center justify-center">
-              <div className="relative w-full">
-                <div className="relative h-80 w-full overflow-hidden rounded-4xl lg:h-100 border border-black/5 shadow-xl shadow-black/10">
+              <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none mx-auto">
+                {/* Soft glow behind image */}
+                <div className="absolute -inset-3 rounded-3xl bg-primary/[0.06] blur-2xl hidden lg:block" />
+                {/* Decorative frame accent */}
+                <div className="absolute -top-3 -right-3 lg:-top-4 lg:-right-4 w-full h-full rounded-2xl border-2 border-primary/15 hidden sm:block" />
+                {/* Decorative blob */}
+                <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 h-20 lg:h-24 w-20 lg:w-24 rounded-full bg-accent/20 blur-md hidden sm:block" />
+                <div className="relative aspect-[4/3] sm:aspect-[4/3] lg:aspect-[3/4] w-full overflow-hidden rounded-2xl border border-primary/10 shadow-xl shadow-primary/10 lg:max-h-[520px]">
                   <Image
                     src="/heropalmhc.png"
-                    alt="Compassionate Palm Health Care"
+                    alt="Doctor providing compassionate care to a patient and child"
                     fill
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/10 via-transparent to-transparent" />
+                </div>
+                {/* Floating accent badge */}
+                <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:-left-5 rounded-xl bg-white px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg shadow-black/8 border border-sand/60 flex items-center gap-3">
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-dark text-white">
+                    <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm font-semibold text-black tracking-wide">Serving Our Community</p>
+                    <p className="text-[11px] sm:text-xs text-charcoal">Care with compassion and dignity</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -469,6 +505,22 @@ export default function Home() {
                     />
                   </svg>
                   (305) 733-1669
+                </p>
+                <p className="flex items-center gap-3">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18.75 12h-1.5m-7.5 0h7.5"
+                    />
+                  </svg>
+                  Fax: (305) 952-4188
                 </p>
                 <p className="flex items-center gap-3">
                   <svg

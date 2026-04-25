@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -11,12 +12,14 @@ interface Service {
   title: string;
   description: string;
   details: string[];
+  image: string;
   icon: React.ReactNode;
 }
 
 const services: Service[] = [
   {
     title: "PrEP Services",
+    image: "/testing.jpg",
     description:
       "Preventive care and treatment focused on reducing the risk of HIV transmission. Our team provides education, screening, and ongoing support to help keep you protected.",
     details: [
@@ -44,6 +47,7 @@ const services: Service[] = [
   },
   {
     title: "Mental Health",
+    image: "/mentalhealth.jpg",
     description:
       "Support for emotional and psychological well-being through compassionate, patient-centered care. We offer a safe environment where individuals can receive the help they need.",
     details: [
@@ -71,6 +75,7 @@ const services: Service[] = [
   },
   {
     title: "Alcohol & Drug Addiction",
+    image: "/addiction.jpg",
     description:
       "Treatment and recovery support for individuals facing substance use challenges. Our compassionate team provides personalized care to help patients achieve lasting recovery.",
     details: [
@@ -98,6 +103,7 @@ const services: Service[] = [
   },
   {
     title: "Weight Loss",
+    image: "/weightloss.png",
     description:
       "Personalized programs designed to support healthy and sustainable weight management. We combine medical guidance with lifestyle counseling to help you reach your goals.",
     details: [
@@ -195,9 +201,13 @@ export default function ServicesPage() {
                   <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                     <div className="relative w-full">
                       <div className="blob-shape absolute -inset-3 bg-gradient-to-br from-primary/5 to-accent/5 blur-sm" />
-                      {/* TODO: Replace with real service photos from client */}
-                      <div className="relative flex h-64 w-full items-center justify-center rounded-2xl bg-gray-200 text-gray-400 text-sm font-medium lg:h-80">
-                        {service.title} Photo
+                      <div className="relative h-64 w-full overflow-hidden rounded-2xl lg:h-80">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                     </div>
                   </div>

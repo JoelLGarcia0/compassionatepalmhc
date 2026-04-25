@@ -1,4 +1,5 @@
 import WaveSeparator from "@/components/WaveSeperator";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -36,8 +37,7 @@ const referralSteps = [
     number: "1",
     title: "Submit a Referral",
     description:
-      /* TODO: Confirm fax number and referral process with client */
-      "Contact us to submit a referral. Reach out by phone at (305) 733-1669 or email at Contact@compassionatepalmhealthcare.com.",
+      "Contact us to submit a referral. Reach out by phone at (305) 733-1669, fax at (305) 952-4188, or email at Contact@compassionatepalmhealthcare.com.",
   },
   {
     number: "2",
@@ -164,11 +164,16 @@ export default function ProvidersPage() {
                 </h2>
                 <div className="mt-8 space-y-6 text-charcoal">
                   <div>
-                    {/* TODO: Confirm fax number and dedicated provider relations line with client */}
                     <p className="font-semibold text-black text-sm tracking-wide">
                       Phone:
                     </p>
                     <p className="text-sm mt-1">(305) 733-1669</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black text-sm tracking-wide">
+                      Fax:
+                    </p>
+                    <p className="text-sm mt-1">(305) 952-4188</p>
                   </div>
                   <div>
                     <p className="font-semibold text-black text-sm tracking-wide">
@@ -205,8 +210,13 @@ export default function ProvidersPage() {
               </div>
               <div className="flex items-center justify-center">
                 <div className="relative w-full">
-                  <div className="relative flex h-64 w-full items-center justify-center rounded-2xl bg-gray-200 text-gray-400 text-sm font-medium">
-                    Provider Partnership Photo
+                  <div className="relative h-72 sm:h-80 lg:h-96 w-full overflow-hidden rounded-2xl border border-sand/60 shadow-lg shadow-black/5">
+                    <Image
+                      src="/providers.png"
+                      alt="Healthcare providers partnering together"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
               </div>
