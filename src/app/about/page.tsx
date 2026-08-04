@@ -5,7 +5,7 @@ import WaveSeparator from "@/components/WaveSeperator";
 export const metadata: Metadata = {
   title: "About Us | Compassionate Palm Health Care",
   description:
-    "Learn about the mission and values behind Compassionate Palm Health Care — an integrated, community-centered healthcare organization serving underserved populations in Miami.",
+    "Learn about the mission and values behind Compassionate Palm Health Care, an integrated, community-centered healthcare organization serving underserved populations in Miami.",
 };
 
 interface Value {
@@ -19,7 +19,7 @@ const values: Value[] = [
   {
     title: "Compassion",
     description:
-      "We treat every patient with dignity, empathy, and respect — meeting people where they are.",
+      "We treat every patient with dignity, empathy, and respect, meeting people where they are.",
     icon: (
       <svg
         className="h-6 w-6"
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               About Us
             </p>
-            <h1 className="text-4xl font-bold text-black sm:text-5xl tracking-wide">
+            <h1 className="text-4xl font-medium sm:text-5xl">
               Dedicated to Our Community&apos;s Health
             </h1>
             <p className="mt-7 text-lg leading-relaxed text-charcoal">
@@ -129,7 +129,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide text-center font-accent heading-accent">
+              <h2 className="text-3xl font-medium sm:text-4xl text-center font-accent heading-accent">
                 Our Mission
               </h2>
               <p className="mt-7 text-lg leading-relaxed text-charcoal">
@@ -158,6 +158,7 @@ export default function AboutPage() {
                     src="/mission.png"
                     alt="Our mission at Compassionate Palm Health Care"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -173,11 +174,11 @@ export default function AboutPage() {
         <WaveSeparator position="top" colorClassName="text-cream/60" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               Our Core Values
             </h2>
             <p className="mt-5 text-lg text-charcoal">
-              These values guide everything we do — from patient care to
+              These values guide everything we do, from patient care to
               community engagement.
             </p>
           </div>
@@ -187,10 +188,10 @@ export default function AboutPage() {
                 key={v.title}
                 className="bg-white p-10 text-center card-hover cursor-default"
               >
-                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary">
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
                   {v.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-black tracking-wide">
+                <h3 className="text-lg font-semibold">
                   {v.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal">
@@ -203,10 +204,10 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-16 lg:py-20">
+      <section className="pt-16 pb-28 lg:pt-20 lg:pb-36">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               Our Team
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -214,21 +215,13 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-xl border border-sand bg-white p-8 sm:p-10 flex flex-col sm:flex-row gap-8 items-center sm:items-start card-hover">
-              <div className="relative h-40 w-40 sm:h-48 sm:w-48 shrink-0 overflow-hidden rounded-xl">
-                <Image
-                  src="/DR_Gelbrand.jpg"
-                  alt="Dr. Steven D. Gelbard, MD"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="text-center sm:text-left">
-                <h3 className="text-xl font-semibold text-black tracking-wide">
+            <div className="rounded-xl border border-sand bg-white p-8 sm:p-10 card-hover">
+              <div>
+                <h3 className="text-xl font-semibold">
                   Dr. Steven D. Gelbard, MD
                 </h3>
                 <p className="mt-1 text-sm font-accent italic text-primary">
-                  Medical Director — Neurosurgery & Pain Management
+                  Medical Director, Neurosurgery &amp; Pain Management
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-charcoal">
                   Board-certified neurosurgeon with subspecialty expertise in pain management.

@@ -28,7 +28,7 @@ const benefits = [
   {
     title: "Community Health Focus",
     description:
-      "We serve diverse populations with culturally competent, multilingual care — extending your reach into underserved communities.",
+      "We serve diverse populations with culturally competent, multilingual care that extends your reach into underserved communities.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function ProvidersPage() {
             <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               For Providers
             </p>
-            <h1 className="text-4xl font-bold text-black sm:text-5xl tracking-wide">
+            <h1 className="text-4xl font-medium sm:text-5xl">
               Partner With Us
             </h1>
             <p className="mt-7 text-lg leading-relaxed text-charcoal">
@@ -94,7 +94,7 @@ export default function ProvidersPage() {
       <section className="py-16 lg:py-20 mb-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               Why Partner With Us
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -108,7 +108,7 @@ export default function ProvidersPage() {
                 key={b.title}
                 className="bg-white p-10 card-hover cursor-default"
               >
-                <h3 className="text-lg font-semibold text-black mb-4 tracking-wide">
+                <h3 className="text-lg font-semibold mb-4">
                   {b.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-charcoal">
@@ -125,7 +125,7 @@ export default function ProvidersPage() {
         <WaveSeparator position="top" colorClassName="text-cream/60" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               Referral Process
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -138,10 +138,10 @@ export default function ProvidersPage() {
                 {i < referralSteps.length - 1 && (
                   <div className="hidden md:block absolute top-7 left-[60%] w-[80%] border-t border-dashed border-sand" />
                 )}
-                <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-dark text-white text-xl font-bold relative z-10 shadow-md shadow-primary/20">
+                <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white text-xl font-bold relative z-10 shadow-md shadow-primary/20">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-semibold text-black tracking-wide">
+                <h3 className="text-lg font-semibold">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal max-w-xs mx-auto">
@@ -159,7 +159,7 @@ export default function ProvidersPage() {
           <div className="rounded-2xl border border-sand bg-white p-10 lg:p-16 card-hover">
             <div className="grid gap-16 lg:grid-cols-2 items-center">
               <div>
-                <h2 className="text-2xl font-bold text-black sm:text-3xl tracking-wide font-accent">
+                <h2 className="text-2xl font-medium sm:text-3xl font-accent">
                   Referral Information
                 </h2>
                 <div className="mt-8 space-y-6 text-charcoal">
@@ -189,19 +189,31 @@ export default function ProvidersPage() {
                     </p>
                     <ul className="mt-2 space-y-2 text-sm">
                       <li className="flex items-start gap-2">
-                        <span className="text-accent mt-0.5">—</span>
+                        <span
+                          aria-hidden
+                          className="mt-2.5 h-px w-3 shrink-0 bg-accent"
+                        />
                         Patient demographics and contact information
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-accent mt-0.5">—</span>
+                        <span
+                          aria-hidden
+                          className="mt-2.5 h-px w-3 shrink-0 bg-accent"
+                        />
                         Insurance information (if applicable)
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-accent mt-0.5">—</span>
+                        <span
+                          aria-hidden
+                          className="mt-2.5 h-px w-3 shrink-0 bg-accent"
+                        />
                         Reason for referral and clinical notes
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="text-accent mt-0.5">—</span>
+                        <span
+                          aria-hidden
+                          className="mt-2.5 h-px w-3 shrink-0 bg-accent"
+                        />
                         Relevant labs, imaging, or test results
                       </li>
                     </ul>
@@ -215,6 +227,7 @@ export default function ProvidersPage() {
                       src="/providers.png"
                       alt="Healthcare providers partnering together"
                       fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </div>
@@ -226,11 +239,14 @@ export default function ProvidersPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark py-16 lg:py-20 overflow-hidden">
+      <section className="on-dark relative bg-primary pt-16 pb-28 lg:pt-20 lg:pb-36 overflow-hidden">
         <div className="blob-shape absolute -top-20 -right-20 h-72 w-72 bg-white/5 blur-xl" />
         <div className="blob-shape absolute -bottom-16 -left-16 h-56 w-56 bg-accent/10 blur-xl" />
         <div className="mx-auto max-w-4xl px-4 text-center text-white relative">
-          <h2 className="text-3xl font-bold sm:text-4xl tracking-wide font-accent">
+          <p className="eyebrow justify-center" data-centered="true">
+            For referring providers
+          </p>
+          <h2 className="mt-4 text-3xl font-medium sm:text-4xl font-accent">
             Let&apos;s Work Together
           </h2>
           <p className="mt-5 text-lg text-white/70 font-accent italic">

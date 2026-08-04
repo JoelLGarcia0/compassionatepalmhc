@@ -104,7 +104,7 @@ export default function PatientsPage() {
             <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               For Patients
             </p>
-            <h1 className="text-4xl font-bold text-black sm:text-5xl tracking-wide">
+            <h1 className="text-4xl font-medium sm:text-5xl">
               Your Health, Our Priority
             </h1>
             <p className="mt-7 text-lg leading-relaxed text-charcoal">
@@ -129,7 +129,7 @@ export default function PatientsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+              <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
                 Eligibility &amp; Access
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-charcoal">
@@ -164,6 +164,7 @@ export default function PatientsPage() {
                     src="/patient.png"
                     alt="Patient receiving care at Compassionate Palm Health Care"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -178,7 +179,7 @@ export default function PatientsPage() {
         <WaveSeparator position="top" colorClassName="text-cream/60" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               How to Schedule
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -254,10 +255,10 @@ export default function PatientsPage() {
                 key={method.title}
                 className="bg-white p-10 text-center card-hover cursor-default"
               >
-                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary">
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
                   {method.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-black tracking-wide">
+                <h3 className="text-lg font-semibold">
                   {method.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal">
@@ -270,10 +271,10 @@ export default function PatientsPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-16 lg:py-20">
+      <section className="pt-16 pb-28 lg:pt-20 lg:pb-36">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               Frequently Asked Questions
             </h2>
             <p className="mt-5 text-lg text-charcoal">

@@ -142,12 +142,12 @@ export default function ServicesPage() {
             <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               Our Services
             </p>
-            <h1 className="text-4xl font-bold text-black sm:text-5xl tracking-wide">
+            <h1 className="text-4xl font-medium sm:text-5xl">
               Comprehensive Care for Your Well-Being
             </h1>
             <p className="mt-7 text-lg leading-relaxed text-charcoal">
               From preventive care to mental health support, substance use
-              treatment to weight management — we offer integrated healthcare
+              treatment to weight management, we offer integrated healthcare
               services designed to meet your needs.
             </p>
           </div>
@@ -164,10 +164,10 @@ export default function ServicesPage() {
                 <div className="grid gap-16 items-center lg:grid-cols-2">
                   <div className={i % 2 === 1 ? "lg:order-2" : ""}>
                     <div className="flex items-center gap-4 mb-5">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
                         {service.icon}
                       </div>
-                      <h2 className="text-2xl font-bold text-black sm:text-3xl tracking-wide font-accent">
+                      <h2 className="text-2xl font-medium sm:text-3xl font-accent">
                         {service.title}
                       </h2>
                     </div>
@@ -200,12 +200,13 @@ export default function ServicesPage() {
                   </div>
                   <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                     <div className="relative w-full">
-                      <div className="blob-shape absolute -inset-3 bg-gradient-to-br from-primary/5 to-accent/5 blur-sm" />
+                      <div className="blob-shape absolute -inset-3 bg-primary/5 blur-sm" />
                       <div className="relative h-64 w-full overflow-hidden rounded-2xl lg:h-80">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
                         />
                       </div>
@@ -219,12 +220,15 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark py-16 lg:py-20 overflow-hidden">
+      <section className="on-dark relative bg-primary pt-16 pb-28 lg:pt-20 lg:pb-36 overflow-hidden">
         <div className="blob-shape absolute -top-20 -right-20 h-72 w-72 bg-white/5 blur-xl" />
         <div className="blob-shape absolute -bottom-16 -left-16 h-56 w-56 bg-accent/10 blur-xl" />
         <div className="mx-auto max-w-4xl px-4 text-center text-white relative">
           {/* TODO: Final CTA wording from client */}
-          <h2 className="text-3xl font-bold sm:text-4xl tracking-wide font-accent">
+          <p className="eyebrow justify-center" data-centered="true">
+            New patients
+          </p>
+          <h2 className="mt-4 text-3xl font-medium sm:text-4xl font-accent">
             Ready to Take the Next Step?
           </h2>
           <p className="mt-5 text-lg text-white/70 font-accent italic">

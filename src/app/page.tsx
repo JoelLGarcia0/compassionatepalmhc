@@ -9,17 +9,6 @@ interface ServiceCard {
   icon: React.ReactNode;
 }
 
-interface Stat {
-  value: string;
-  label: string;
-}
-
-interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-}
-
 /* ─── Data ─── */
 const services: ServiceCard[] = [
   {
@@ -104,36 +93,6 @@ const services: ServiceCard[] = [
   },
 ];
 
-/* TODO: Replace with real impact statistics once provided by client */
-const stats: Stat[] = [
-  { value: "25,000+", label: "Patients Served Annually" },
-  { value: "15+", label: "Years of Service" },
-  { value: "98%", label: "Patient Satisfaction" },
-  { value: "50+", label: "Healthcare Professionals" },
-];
-
-/* TODO: Replace with real patient testimonials once provided by client */
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Compassionate Palm changed my life. I finally have a healthcare team that truly listens and cares about my well-being. I never felt judged, only supported.",
-    name: "Maria G.",
-    role: "Patient since 2019",
-  },
-  {
-    quote:
-      "The staff here treats you like family. From the front desk to the doctor, everyone goes above and beyond. I recommend them to everyone in my community.",
-    name: "James T.",
-    role: "Patient since 2021",
-  },
-  {
-    quote:
-      "I was uninsured and didn't know where to turn. Compassionate Palm helped me get the care I needed with a sliding-fee scale. I'm so grateful.",
-    name: "Aisha R.",
-    role: "Patient since 2022",
-  },
-];
-
 const steps = [
   {
     number: "1",
@@ -170,7 +129,7 @@ export default function Home() {
               <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-accent italic text-primary tracking-wide">
                 Quality care. Stronger community.
               </p>
-              <h1 className="text-3xl font-bold leading-[1.15] text-black sm:text-4xl lg:text-5xl tracking-wide">
+              <h1 className="text-3xl font-medium leading-[1.15] sm:text-4xl lg:text-5xl">
                 Compassionate Care{" "}
                 <br className="hidden sm:block" />
                 for{" "}
@@ -193,7 +152,7 @@ export default function Home() {
               </h1>
               <p className="mt-6 max-w-lg mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed text-charcoal">
                 We provide accessible, community-centered healthcare focused on
-                quality, continuity, and compassion — serving families, seniors,
+                quality, continuity, and compassion. We serve families, seniors,
                 veterans, and underserved communities.
               </p>
               <div className="mt-8 sm:mt-10 flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
@@ -242,6 +201,7 @@ export default function Home() {
                     src="/heropalmhc.png"
                     alt="Doctor providing compassionate care to a patient and child"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
@@ -249,7 +209,7 @@ export default function Home() {
                 </div>
                 {/* Floating accent badge */}
                 <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:-left-5 rounded-xl bg-white px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg shadow-black/8 border border-sand/60 flex items-center gap-3">
-                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-dark text-white">
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                     </svg>
@@ -269,7 +229,7 @@ export default function Home() {
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               What We Do
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -283,10 +243,10 @@ export default function Home() {
                 key={service.title}
                 className="bg-white p-10 card-hover cursor-default"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-black tracking-wide">
+                <h3 className="text-lg font-semibold">
                   {service.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal">
@@ -323,7 +283,7 @@ export default function Home() {
       <section className="relative bg-cream/60 pt-20 pb-16 lg:pt-20 lg:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent heading-accent">
               Who We Serve
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -357,10 +317,10 @@ export default function Home() {
                 key={item.title}
                 className="rounded-xl border border-sand/80 bg-white p-10 card-hover"
               >
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-accent/20 text-primary text-base font-bold font-accent">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-primary/15 text-primary text-base font-bold font-accent">
                   {item.title[0]}
                 </div>
-                <h3 className="text-xl font-semibold text-black tracking-wide">
+                <h3 className="text-xl font-semibold">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal">
@@ -396,7 +356,10 @@ export default function Home() {
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
+            <p className="eyebrow justify-center" data-centered="true">
+              Three steps
+            </p>
+            <h2 className="mt-4 text-3xl font-medium sm:text-4xl font-accent">
               How to Get Care
             </h2>
             <p className="mt-5 text-lg text-charcoal">
@@ -410,10 +373,10 @@ export default function Home() {
                 {i < steps.length - 1 && (
                   <div className="hidden md:block absolute top-7 left-[60%] w-[80%] border-t border-dashed border-sand" />
                 )}
-                <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-dark text-white text-xl font-bold relative z-10 shadow-md shadow-primary/20">
+                <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white text-xl font-bold relative z-10 shadow-md shadow-primary/20">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-semibold text-black tracking-wide">
+                <h3 className="text-lg font-semibold">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal max-w-xs mx-auto">
@@ -436,11 +399,11 @@ export default function Home() {
 
       {/* ── Location & Hours ── */}
 
-      <section className="relative bg-primary-dark text-white pt-20 pb-16 lg:pt-16 lg:pb-20">
+      <section className="on-dark relative bg-primary-dark text-white pt-20 pb-16 lg:pt-16 lg:pb-20">
         <WaveSeparator position="top" colorClassName="text-primary-dark" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold sm:text-4xl tracking-wide font-accent">
+            <h2 className="text-3xl font-medium sm:text-4xl font-accent">
               Location &amp; Hours
             </h2>
             <p className="mt-5 text-lg text-white/70 font-accent italic">
@@ -449,7 +412,7 @@ export default function Home() {
           </div>
           <div className="max-w-lg mx-auto">
             <div className="bg-primary-dark p-10 rounded-xl border border-white/10">
-              <h3 className="text-lg font-semibold mb-5 tracking-wide">
+              <h3 className="text-lg font-semibold mb-5">
                 Compassionate Palm Health Care
               </h3>
               <div className="space-y-4 text-sm text-white/70">
@@ -544,108 +507,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Impact Stats ── */}
-      {/* TODO: Replace placeholder statistics with real data from client */}
-      <section className="relative py-16 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cream/40 via-white to-accent/5" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
-              Our Impact
-            </h2>
-            <p className="mt-5 text-lg text-charcoal">
-              Making a difference in the lives of our neighbors every day.
-            </p>
-          </div>
-          <div className="grid gap-px bg-sand/60 sm:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-sand/60">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-white text-center py-12 px-6 stat-hover"
-              >
-                <p className="text-4xl font-bold text-primary lg:text-5xl font-display">
-                  {stat.value}
-                </p>
-                <p className="mt-3 text-sm text-charcoal tracking-wide">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <hr className="hairline mx-auto max-w-7xl" />
-
-      {/* ── Testimonials ── */}
-      {/* TODO: Replace placeholder testimonials with real patient testimonials from client */}
-      <section className="py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-black sm:text-4xl tracking-wide font-accent heading-accent">
-              What Our Patients Say
-            </h2>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="rounded-xl border border-sand bg-white p-10 testimonial-bar card-hover"
-              >
-                <svg
-                  className="h-6 w-6 text-accent/60 mb-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
-                </svg>
-                <p className="text-base leading-relaxed text-charcoal font-accent italic">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="mt-8 border-t border-sand pt-5">
-                  <p className="font-semibold text-black text-sm tracking-wide">
-                    {t.name}
-                  </p>
-                  <p className="text-xs text-charcoal mt-0.5">{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Partners ── */}
-      {/* TODO: Replace placeholder partner names with real community partners from client */}
-      <section className="py-14 lg:py-18 bg-cream/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/60 mb-12">
-            Our Community Partners
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
-            {[
-              "Partner Hospital",
-              "Community Foundation",
-              "County Health Dept",
-              "University Health",
-              "United Way",
-            ].map((name) => (
-              <div
-                key={name}
-                className="flex h-14 w-36 items-center justify-center rounded border border-sand bg-white text-xs text-gray-400"
-              >
-                {name}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA Banner ── */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-primary-dark py-14 lg:py-18 overflow-hidden">
+      <section className="on-dark relative bg-primary pt-16 pb-28 lg:pt-20 lg:pb-36 overflow-hidden">
         <div className="blob-shape absolute -top-20 -right-20 h-72 w-72 bg-white/5 blur-xl" />
         <div className="blob-shape absolute -bottom-16 -left-16 h-56 w-56 bg-accent/10 blur-xl" />
         <div className="mx-auto max-w-4xl px-4 text-center text-white relative">
-          <h2 className="text-3xl font-bold sm:text-4xl tracking-wide font-accent">
+          <p className="eyebrow justify-center" data-centered="true">
+            New patients
+          </p>
+          <h2 className="mt-4 text-3xl font-medium sm:text-4xl font-accent">
             Ready to Get Started?
           </h2>
           <p className="mt-5 text-lg text-white/70 font-accent italic">
