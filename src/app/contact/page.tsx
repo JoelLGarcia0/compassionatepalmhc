@@ -10,6 +10,8 @@ interface FormData {
   phone: string;
   subject: string;
   message: string;
+  /** Honeypot. Real people never see it; bots fill it in. */
+  company: string;
 }
 
 interface FormErrors {
@@ -26,6 +28,7 @@ const initialForm: FormData = {
   phone: "",
   subject: "",
   message: "",
+  company: "",
 };
 
 function validate(data: FormData): FormErrors {
@@ -45,6 +48,8 @@ export default function ContactPage() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
 
   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     const { name, value } = e.target;
@@ -54,17 +59,43 @@ export default function ContactPage() {
     }
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+
+    // Honeypot tripped — accept silently rather than telling a bot it failed.
+    if (form.company.trim()) {
+      setSubmitted(true);
+      setForm(initialForm);
+      return;
+    }
+
     const validationErrors = validate(form);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    console.log("Form submitted:", form);
-    setSubmitted(true);
-    setForm(initialForm);
-    setErrors({});
+
+    setSending(true);
+    setSendFailed(false);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error(`Request failed with ${res.status}`);
+
+      setSubmitted(true);
+      setForm(initialForm);
+      setErrors({});
+    } catch {
+      // Never claim the message went through when it did not.
+      setSendFailed(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -75,26 +106,29 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl">
             <p className="mb-5 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Contact Us</p>
-            <h1 className="text-4xl font-bold text-black sm:text-5xl tracking-wide">
+            <h1 className="text-4xl font-medium sm:text-5xl">
               We&apos;re Here to Help
             </h1>
             <p className="mt-7 text-lg leading-relaxed text-charcoal">
-              Have a question, need to schedule an appointment, or want to learn more about our services? Reach out — we&apos;d love to hear from you.
+              Have a question, need to schedule an appointment, or want to learn more about our services? Reach out. We&apos;d love to hear from you.
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 lg:py-20">
+      <section className="pt-16 pb-28 lg:pt-20 lg:pb-36">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-5">
             {/* Form */}
             <div className="lg:col-span-3">
-              <h2 className="text-2xl font-bold text-black mb-10 tracking-wide font-accent">Send Us a Message</h2>
+              <h2 className="text-2xl font-medium mb-10 font-accent">Send Us a Message</h2>
 
               {submitted && (
-                <div className="mb-10 rounded-xl bg-green-50 border border-green-200 p-8">
+                <div
+                  role="status"
+                  className="mb-10 rounded-xl bg-green-50 border border-green-200 p-8"
+                >
                   <p className="text-green-800 font-semibold tracking-wide">Thank you for reaching out!</p>
                   <p className="text-green-700 text-sm mt-2">
                     We&apos;ve received your message and will get back to you within one business day.
@@ -102,7 +136,40 @@ export default function ContactPage() {
                 </div>
               )}
 
+              {sendFailed && (
+                <div
+                  role="alert"
+                  className="mb-10 rounded-xl bg-red-50 border border-red-200 p-8"
+                >
+                  <p className="text-red-800 font-semibold tracking-wide">
+                    Your message didn&apos;t send
+                  </p>
+                  <p className="text-red-700 text-sm mt-2">
+                    Something went wrong on our end, so no one has received it.
+                    Please try again, or call us at{" "}
+                    <a className="font-semibold underline" href="tel:+13057331669">
+                      (305) 733-1669
+                    </a>{" "}
+                    and we&apos;ll help you right away.
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} noValidate className="space-y-7">
+                {/* Honeypot. Hidden from people, tempting to bots. */}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={form.company}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className="grid gap-7 sm:grid-cols-2">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-black mb-2 tracking-wide">
@@ -208,15 +275,35 @@ export default function ContactPage() {
                       errors.message ? "border-red-400" : "border-sand"
                     }`}
                     placeholder="How can we help you?"
+                    aria-describedby="message-privacy"
                   />
                   {errors.message && <p className="mt-1.5 text-xs text-red-500">{errors.message}</p>}
+                  <p
+                    id="message-privacy"
+                    className="mt-3 flex items-start gap-2 rounded-lg bg-cream/60 px-4 py-3 text-xs leading-relaxed text-charcoal"
+                  >
+                    <span aria-hidden className="mt-1.5 h-px w-3 shrink-0 bg-accent" />
+                    <span>
+                      This form is not a secure channel. Please don&apos;t
+                      include medical details such as symptoms, diagnoses, or
+                      medications. For anything clinical, call us at{" "}
+                      <a
+                        className="font-semibold text-primary hover:underline"
+                        href="tel:+13057331669"
+                      >
+                        (305) 733-1669
+                      </a>
+                      . In an emergency, call 911.
+                    </span>
+                  </p>
                 </div>
 
                 <button
                   type="submit"
-                  className="rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25"
+                  disabled={sending}
+                  className="rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/25 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-primary disabled:hover:shadow-none"
                 >
-                  Send Message
+                  {sending ? "Sending…" : "Send Message"}
                 </button>
               </form>
             </div>
@@ -226,7 +313,7 @@ export default function ContactPage() {
               <div className="space-y-8">
                 {/* Contact Details */}
                 <div className="rounded-xl border border-sand bg-cream/40 p-8 testimonial-bar">
-                  <h3 className="text-lg font-semibold text-black mb-7 tracking-wide">Contact Details</h3>
+                  <h3 className="text-lg font-semibold mb-7">Contact Details</h3>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
                       <svg className="h-5 w-5 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
