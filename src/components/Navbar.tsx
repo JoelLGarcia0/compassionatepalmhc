@@ -59,7 +59,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex font-display lg:items-center lg:gap-8">
+          <div className="hidden lg:flex lg:items-center lg:gap-8">
             {desktopLinks.map((link) => (
               <NavLink key={link.href} href={link.href} label={link.label} />
             ))}
@@ -70,7 +70,7 @@ export default function Navbar() {
             {/* TODO: Final CTA wording from client */}
             <Link
               href="/contact"
-              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark font-display tracking-wide"
+              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark tracking-wide"
             >
               Contact Us
             </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {mobileOpen && (
           <div className="lg:hidden border-t border-sand/60 pb-6 pt-4">
-            <div className="flex flex-col font-display gap-4">
+            <div className="flex flex-col gap-4">
               {mobileLinks.map((link) => (
                 <NavLink
                   key={link.href}

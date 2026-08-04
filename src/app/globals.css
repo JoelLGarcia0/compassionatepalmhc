@@ -1,150 +1,230 @@
-@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
 @import "tailwindcss";
 
-:root {
+/* ------------------------------------------------------------------------- *
+ * Compassionate Palm Health Care — design tokens
+ *
+ * Sibling system to American Dream Day Care: same architecture, same spacing
+ * and type rhythm, same accessibility foundations — different brand hues.
+ *
+ * Teal carries trust and headings, deep teal carries dark bands, and bronze
+ * appears only as a hairline accent, the way gold does on the day care site.
+ * ------------------------------------------------------------------------- */
+
+@theme {
+  /* Brand */
   --color-primary: #0d585b;
-  --color-primary-dark: #073f2e;
-  --color-secondary: #b4794f;
-  --color-accent: #af9d6d;
+  --color-primary-dark: #073f41;
+  --color-accent: #b4794f;
+
+  /* Ink */
   --color-dark: #3e3b3a;
   --color-charcoal: #4c4a3e;
-  --color-olive: #71784c;
-  --color-steel: #4a5b77;
-  --color-lavender: #b6b4c9;
+  --color-black: #090b0a;
+
+  /* Ground */
   --color-cream: #f1e8cc;
   --color-sand: #e0dcd3;
-  --color-silver: #c4c5c7;
-  --color-black: #090b0a;
   --color-white: #ffffff;
+  --color-background: #ffffff;
+  --color-foreground: #3e3b3a;
 
-  --background: #ffffff;
-  --foreground: #3e3b3a;
+  /* Type — serif display over sans body, mirroring the day care site. */
+  --font-display: var(--font-lora), ui-serif, Georgia, serif;
+  --font-accent: var(--font-lora), ui-serif, Georgia, serif;
+  --font-body: var(--font-funnel-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-funnel-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 0.875rem;
+
+  --shadow-raise:
+    0 1px 2px rgb(7 63 65 / 0.04), 0 8px 24px -12px rgb(7 63 65 / 0.16);
+  --shadow-lift:
+    0 2px 4px rgb(7 63 65 / 0.05), 0 18px 36px -18px rgb(7 63 65 / 0.28);
 }
 
-@theme inline {
-  --color-primary: var(--color-primary);
-  --color-primary-dark: var(--color-primary-dark);
-  --color-secondary: var(--color-secondary);
-  --color-accent: var(--color-accent);
-  --color-dark: var(--color-dark);
-  --color-charcoal: var(--color-charcoal);
-  --color-olive: var(--color-olive);
-  --color-steel: var(--color-steel);
-  --color-lavender: var(--color-lavender);
-  --color-cream: var(--color-cream);
-  --color-sand: var(--color-sand);
-  --color-silver: var(--color-silver);
-  --color-black: var(--color-black);
-  --color-white: var(--color-white);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  /* 3-Font System */
-  --font-display:
-    "Funnel Sans", "Manrope", "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Tahoma", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-accent: "Lora", "Georgia", ui-serif, serif;
-  --font-sans: var(--font-body);
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body);
-  line-height: 1.7;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Heading defaults — use @layer base so Tailwind utilities can override */
 @layer base {
+  :root {
+    /* Shared by the sticky header, the mobile panel, and anchor offsets. */
+    --header-height: 5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Keep anchored sections clear of the sticky header. */
+    scroll-padding-top: 6.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    /* Nothing on this site should ever scroll sideways. */
+    overflow-x: hidden;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    color: var(--color-primary-dark);
     font-family: var(--font-display);
-    letter-spacing: 0.025em;
+    font-weight: 500;
+    letter-spacing: -0.011em;
     line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  /* Dark bands set their own text color; headings inherit it rather than
+     staying teal. :where() holds specificity at zero so utilities still win. */
+  .on-dark :where(h1, h2, h3, h4, h5, h6) {
+    color: inherit;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* A single, consistent focus ring everywhere, including on dark bands. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: var(--color-accent);
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+    color: var(--color-primary-dark);
   }
 }
 
-/* Focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+@layer components {
+  /* The motif shared with the day care site: a metallic hairline beside a
+     label. Gold there, bronze here. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .eyebrow::after {
+    content: "";
+    height: 1px;
+    width: 2rem;
+    flex: none;
+    background-color: var(--color-accent);
+  }
+
+  .eyebrow[data-centered="true"]::before {
+    content: "";
+    height: 1px;
+    width: 2rem;
+    flex: none;
+    background-color: var(--color-accent);
+  }
+
+  /* Bronze is too dark to read on the teal bands — unlike the day care site,
+     whose gold is light enough to carry itself. Cream text, bronze rule. */
+  .on-dark .eyebrow {
+    color: var(--color-cream);
+  }
+
+  .on-dark .eyebrow::after,
+  .on-dark .eyebrow[data-centered="true"]::before {
+    background-color: color-mix(in srgb, var(--color-cream) 55%, transparent);
+  }
+
+  /* Hairline divider utility */
+  .hairline {
+    border: none;
+    border-top: 1px solid var(--color-sand);
+  }
+
+  /* Decorative heading underline — a flat bronze rule, not a gradient. */
+  .heading-accent::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 2px;
+    margin: 16px auto 0;
+    background-color: var(--color-accent);
+  }
+
+  /* Testimonial accent bar — flat bronze hairline. */
+  .testimonial-bar {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+  }
+
+  /* Organic shape language — the wave and blob are this site's own signature. */
+  .blob-shape {
+    border-radius: 42% 58% 62% 38% / 46% 51% 49% 54%;
+  }
+
+  /* Wave pinned to top of its section — no gap possible */
+  .wave-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 1;
+  }
+
+  .card-hover {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .stat-hover {
+    transition: background-color 0.25s ease;
+  }
+
+  .stat-hover:hover {
+    background-color: var(--color-cream);
+  }
 }
 
-/* Hairline divider utility */
-.hairline {
-  border: none;
-  border-top: 1px solid var(--color-sand);
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-/* Card hover lift */
-.card-hover {
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -8px rgba(13, 88, 91, 0.12);
-}
-
-/* Decorative heading underline */
-.heading-accent::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 16px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-}
-
-/* Subtle blob shape for decoration */
-.blob-shape {
-  border-radius: 42% 58% 62% 38% / 46% 51% 49% 54%;
-}
-
-/* Stat card pulse hover */
-.stat-hover {
-  transition: background-color 0.25s ease;
-}
-.stat-hover:hover {
-  background-color: var(--color-cream);
-}
-
-/* Testimonial accent bar */
-.testimonial-bar {
-  position: relative;
-  overflow: hidden;
-}
-.testimonial-bar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-accent),
-    var(--color-secondary)
-  );
-}
-
-/* Wave pinned to top of its section — no gap possible */
-.wave-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 48px;
-  z-index: 1;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
